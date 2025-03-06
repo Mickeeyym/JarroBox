@@ -4,6 +4,7 @@ Bem-vindo ao app para desktop para armazenar as informações quantitativas do q
 ---
 # Colaboradores
 
+- [Bruno Dornelas](https://github.com/BrunoDornelas2)- Desenvolvedor do Frontend
 - [Michelangelo Morais](https://github.com/Mickeeyym)- Desenvolvimento do Backend
 - [Paulo Henrique A. de Barros](https://github.com/phabp)- Desenvolvimento do Backend
 - [Arthur Lins](https://github.com/ArthurLins00)- Desenvolvimento do Backend
