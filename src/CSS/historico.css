@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'crimson-regular';
+    src: url(../fontes/CrimsonText-Regular.ttf);
+  }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "crimson-regular", serif;
+}
+body{
+    height: 100vh;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+h2{
+    font-size: 2rem;
+    text-align: center;
+}
+
+#excluir-tudo{
+    position: absolute;
+    right: 20px;
+    color:white;
+    background-color: black;
+    border-color: white;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+#excluir-tudo:hover{
+    background-color: white;
+    color: black;
+}
+#container_hist{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.item_invent {
+    display: flex;
+    width: 90%;
+    max-width: 90%;
+    border: 1px solid white;
+    margin: 4px;
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    justify-content: space-between;
+}
+.item_invent p{
+    padding-top: 4px;
+}
+.item_invent p , button {
+    margin: 5px;
+}
+.delete-btn{
+    color:white;
+    background-color: black;
+    border-color: white;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.delete-btn:hover{
+    background-color: white;
+    color: black;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JarroBox</title>
+    <link rel="stylesheet" href="./CSS/index.css"></link>
+</head>
+<body>
+    <div id="infoBox">
+        <p>Para criar uma nova categoria, use o menu de categorias no canto superior esquerdo. Se for a sua primeira vez, selecione a categoria 'Minha Categoria' e, depois, atualize suas configurações no mesmo menu.</p>
+        <div style="width: 40px;"><img src="./imagens/fechar_branco.png" alt="fechar" style="width: 30px; margin: 5px; cursor:pointer;" onclick="fecharInfo()"></div>
+      </div>
+    <div id="abaMenor">
+        <div class="formulario">
+            <form id="criar_item">
+                <label for="nome">Nome do Item:</label>
+                <input type="text" id="nome" required>
+                <br><br>
+                <label for="valor_atual">Quantidade Atual do Item:</label>
+                <input type="number" min="0" step="1" id="valor_atual" required onkeydown="preventNegativeInput(event)">
+                <br><br>
+                <label for="valor_max">Quantidade Máxima de Referência:</label>
+                <input type="number" min="0" step="1" id="valor_max" required onkeydown="preventNegativeInput(event)">
+                <br><br>
+                <label for="valor_min">Quantidade Mínima para Repor:</label>
+                <input type="number" min="0" step="1" id="valor_min" placeholder="Opcional" onkeydown="preventNegativeInput(event)">
+                <br><br>
+                <label for="valor_compra">Valor de Compra:</label>
+                <input type="number" min="0" step="0.01" id="valor_compra" placeholder="Opcional" onkeydown="preventNegativeInput(event)">
+                <br><br>
+                <label for="fornecedor">Fornecedor:</label>
+                <input type="text" id="fornecedor" placeholder="Opcional">
+                <br><br>
+                <label for="categoria_select">Categoria:</label>
+                <select id="categoria_select" required>
+                </select>
+                <span class="info-icon" onclick="toggleInfo()">ℹ️</span>
+                <br><br>
+                <label for="obs" style="display: block;">Observações:</label>
+                <textarea id="obs" style="width: 420px; height: 50px; resize: none;"></textarea>
+                <br>
+                <button type="submit" id="submit">Criar</button>
+            </form>
+        </div>
+        <div style="width: 40px;"><img src="./imagens/close.icon.png" alt="fechar" style="width: 30px; margin: 5px; cursor:pointer;" onclick="fechar_aba()"></div> 
+    </div>
+    <div id="createCategory">
+        <form id="categoryDados">
+        <label for="nomeCategory">Nome da Categoria:</label>
+        <input type="text" id="nomeCategory" style="margin-bottom: 10px;" required>
+        <label for="colorCategory">Escolha uma Cor para esta Categoria:</label>
+        <input type="color" id="colorCategory" style="margin-bottom: 25px; cursor: pointer;" required value="#FF5733">
+        <button type="submit" id="submitCategory" style="margin-left: 15px;">Criar</button>
+        </form>
+        <div class="espaco">
+            <div style="width: 40px;"><img src="./imagens/close.icon.png" alt="fechar" style="width: 30px; margin: 5px; cursor:pointer;" onclick="fechar_category()"></div>
+        </div>
+    </div>
+    <div id="atualizar_category">
+        <div id="category_lista">
+            <ul id="categoria_lista"></ul>
+        </div>
+        <div id="category_atualizar">
+            <h2>Editar Categoria</h2>
+            <form id="editar-categoria-form">
+                <input type="text" id="categoria-nome" placeholder="Nome da Categoria" required disabled>
+                <input type="color" id="categoria-cor" required disabled>
+                <button type="submit">Atualizar Categoria</button>
+            </form>
+        </div>
+        <div class="espaco_atualizar">
+            <div style="width: 40px;"><img src="./imagens/fechar_branco.png" alt="fechar" style="width: 30px; margin: 5px; cursor:pointer;" onclick="fechar_atualCateg()"></div>
+        </div>
+    </div>
+    <div class="abaItem">
+        <div class="menuItem">
+            <div class="item" id="idItem">
+            </div>
+            <div class="dados_item" id="dados">
+            </div>
+        </div>
+        <div style="width: 40px;"><img src="./imagens/fechar_branco.png" alt="fechar" style="width: 30px; margin: 5px; cursor:pointer;" onclick="fechar_item()"></div>
+    </div>
+        <header>
+            <div id="filtro">
+                <select id="filtros">
+                </select>
+                <button id="adicionar" onclick="abrir_category()">+</button>
+                <button id="adicionar" onclick="abrir_atualCateg(); carregarCategoriasAtualizar()">↻</button>
+            </div>
+            <div id="central">
+                <h1 id="titulo">JarroBox</h1>
+                <button id="criador" onclick="abrir_aba(); carregarCategorias()">Criar Novo Item</button>
+            </div>
+        <div id="extra">
+            <div id="historico"><button onclick="window.open('historico.html', '_blank')">Histórico</button></div>
+            <button id="adicionar" onclick="config()" style="font-size: 1rem;">⚙</button>
+        </div>
+        </header>
+        <div class="corpo" id="armazenador">
+        </div>
+    <script src="./JAVASCRIPT/script.js"></script>
+</body>
+</html>
